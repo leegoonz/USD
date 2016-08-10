@@ -1280,7 +1280,9 @@ class MainWindow(QtGui.QMainWindow):
 
     # Topology-dependent UI changes
     def _reloadVaryingUI(self):
-        import sip
+        # hmathee: this does not seem to be required
+        # and breaks usdview on a fresh Centos 6.0
+        # import sip
 
         # We must call ReloadStage() before _clearCaches() to avoid a crash in
         # the case when we have reopened the stage. The problem is when the
